@@ -45,11 +45,11 @@ require 'cek.php';
 							Obat
 						</a>
 						<a class="nav-link" href="rekammedis.php">
-							<div class="sb-nav-link-icon"><i class="fas fa-cannabis" style="font-size:40px;color:purple;"></i></div>
+							<div class="sb-nav-link-icon"><i class="fas fa-laptop-medical" style="font-size:40px;color:purple;"></i></div>
 							Rekam Medis
 						</a>
 						<a class="nav-link" href="user.php">
-							<div class="sb-nav-link-icon"><i class="fas fa-poo" style="font-size:40px;color:rosybrown;"></i></div>
+							<div class="sb-nav-link-icon"><i class="far fa-address-card" style="font-size:40px;color:rosybrown;"></i></div>
 							User 
 						</a>
 						<a class="nav-link" href="Logout.php">
@@ -175,6 +175,84 @@ require 'cek.php';
 								</div>
 							</div>
 						</div>
+
+
+		<!-- Obat User -->
+						<div class="card-header">
+							<!-- Button to Open the Modal -->
+							Log User
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Keterangan</th>
+											<th>Tanggal</th>
+											<th>Nama</th>
+											<th>Nama Lengkap</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+									<tbody> 
+
+										<?php
+										$a = mysqli_query($conn,"SELECT * from loguser");
+										$i = 1;
+										while($b=mysqli_fetch_array($a)){
+											$keterangan = $b['keterangan'];
+											$tgl = $b['tgl'];
+											$nama = $b['username'];
+											$namalengkap = $b['nama_lengkap'];
+											$idd = $b['id_log_user'];
+											
+				
+											?>
+											<tr>
+												<td><?=$i++;?></td>
+												<td><?=$keterangan;?></td>
+												<td><?=$tgl;?></td>
+												<td><?=$nama;?></td>
+												<td><?=$namalengkap;?></td>
+												<td>
+													<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete<?=$idd;?>">
+														Delete
+													</button>
+												</td>
+											</tr>
+
+											<!-- DELETE Modal -->
+											<div class="modal fade" id="delete<?=$idd;?>">
+												<div class="modal-dialog">
+													<div class="modal-content">
+
+														<!-- Modal Header -->
+														<div class="modal-header">
+															<h4 class="modal-title">Hapus?</h4>
+															<button type="button" class="close" data-dismiss="modal">&times;</button>
+														</div>
+
+														<!-- Modal body -->
+														<form method="post">
+															<div class="modal-body">
+																Apakah Anda yakin ingin menghapus <?=$nama;?> ?
+																<input type="hidden" name="id" value="<?=$idd;?>">
+																
+																<br>
+																<button type="submit" class="btn btn-danger" name="hapusloguser">Hapus</button>
+															</div>
+														</form>
+													</div>
+												</div>
+												<?php
+											};
+											?>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
 					</div>
 				</main>
 				<footer class="py-4 bg-light mt-auto">
