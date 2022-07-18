@@ -50,7 +50,7 @@ if(isset($_POST['updatuser'])){
 if(isset($_POST['hapususer'])){
 	$id = $_POST['id'];
 
-	$querydelete = mysqli_query($conn,"delete from user where iduser='$id'");
+	$querydelete = mysqli_query($conn,"delete from user where id='$id'");
 
 	if($querydelete){
 		//jika berhasil
@@ -60,6 +60,22 @@ if(isset($_POST['hapususer'])){
 		header('location:user.php');
 	}
 }
+
+//Hapus Log user
+if(isset($_POST['hapusloguser'])){
+	$id = $_POST['id'];
+
+	$querydelete = mysqli_query($conn,"delete from loguser where id_log_user='$id'");
+
+	if($querydelete){
+		//jika berhasil
+		header('location:user.php');
+	} else {
+		//jika gak berhasil
+		header('location:user.php');
+	}
+}
+
 
 
 //Tambah Dokter baru
@@ -103,8 +119,26 @@ if(isset($_POST['updatdokter'])){
 //Hapus Dokter
 if(isset($_POST['hapusdokter'])){
 	$id = $_POST['id'];
+	
 
 	$querydelete = mysqli_query($conn,"delete from dokter where id_dokter='$id'");
+
+	if($querydelete){
+		//jika berhasil
+		header('location:dokter.php');
+	} else {
+		//jika gak berhasil
+		header('location:dokter.php');
+	}
+}
+
+
+//Hapus Log Dokter
+if(isset($_POST['hapuslogdokter'])){
+	$id = $_POST['id'];
+	
+
+	$querydelete = mysqli_query($conn,"delete from logdokter where id_log_dokter='$id'");
 
 	if($querydelete){
 		//jika berhasil
@@ -173,6 +207,21 @@ if(isset($_POST['hapuspasien'])){
 	}
 }
 
+//Hapus log pasien
+if(isset($_POST['hapuslogpasien'])){
+	$id = $_POST['id'];
+
+	$querydelete = mysqli_query($conn,"delete from logpasien where id_log_pasien='$id'");
+
+	if($querydelete){
+		//jika berhasil
+		header('location:pasien.php');
+	} else {
+		//jika gak berhasil
+		header('location:pasien.php');
+	}
+}
+
 
 //Tambah Obat baru
 if(isset($_POST['addobat'])){
@@ -228,8 +277,25 @@ if(isset($_POST['hapusobat'])){
 }
 
 
+//Hapus Log Obat
+if(isset($_POST['hapuslogobat'])){
+	$id = $_POST['id'];
+	
+
+	$querydelete = mysqli_query($conn,"delete from logobat where id_log_obat='$id'");
+
+	if($querydelete){
+		//jika berhasil
+		header('location:obat.php');
+	} else {
+		//jika gak berhasil
+		header('location:obat.php');
+	}
+}
+
+
 //Tambah Rekamedis baru
-if(isset($_POST['addrekam medis'])){
+if(isset($_POST['addrekammedis'])){
 	$tgl = $_POST['tgl'];
 	$pasien = $_POST['pasien'];
 	$keluhan = $_POST['keluhan'];
@@ -244,17 +310,17 @@ if(isset($_POST['addrekam medis'])){
 
 	if($queryinsert){
 		//jika berhasil
-		header('location:rekam medis.php');
+		header('location:rekammedis.php');
 
 	} else {
 		//jika gak berhasil
-		header('location:rekam medis.php');
+		header('location:rekammedis.php');
 	}
 
 }
 
 //Hapus Rekam Medis
-if(isset($_POST['hapusrekam medis'])){
+if(isset($_POST['hapusrekammedis'])){
 	$id = $_POST['id'];
 
 	$querydelete = mysqli_query($conn,"delete from berobat where id_berobat='$id'");
