@@ -4,6 +4,8 @@ NIM : 312010271
 
 KELAS : TI.20.D.1
 
+DEMO LINK : https://youtu.be/Gb_qJZjYr4o
+
 Dari Tugas UTS sebelumnya saya membuat sebuah sistem informasi klinik sederhana dimana dalam sistem tersebut saya akan menampilkan
 
 Modul data pasien
