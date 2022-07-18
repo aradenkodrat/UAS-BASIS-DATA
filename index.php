@@ -60,11 +60,11 @@ $hitung3= mysqli_num_rows($get3); //Hitung jumlah kolom
                             Obat
                         </a>
                         <a class="nav-link" href="rekammedis.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-cannabis" style="font-size:40px;color:purple;"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-laptop-medical" style="font-size:40px;color:purple;"></i></div>
                             Rekam Medis
                         </a>
                         <a class="nav-link" href="user.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-poo" style="font-size:40px;color:rosybrown;"></i></div>
+                            <div class="sb-nav-link-icon"><i class="far fa-address-card" style="font-size:40px;color:rosybrown;"></i></div>
                             User 
                         </a>
                         <a class="nav-link" href="Logout.php">
@@ -79,13 +79,15 @@ $hitung3= mysqli_num_rows($get3); //Hitung jumlah kolom
             <div class="container">
               <h2>Dashboard</h2>
               <p>SELAMAT DATANG DI KLINIK RADEN KODRAT</p>
-              <p><strong>Note:</strong>Ini adalah tampilan data jumlah dari data ...</p>
+              <p><strong>Note:</strong>Ini adalah tampilan untuk melihat jumlah data per part yang di peruntukan untuk memudahkan user</p>
               <div class="card-columns">
                 <div class="card bg-primary">
                     <div class="card-body text-center">
-                       <i class="fas fa-user-md" style="font-size:40px;color:greenyellow;"></i>
+                       <i class="fas fa-user-md" style="font-size:100px;color:greenyellow;"></i>
                        <br>
+                        <a class="nav-link" href="dokter.php">
                        <p class="card-text text-white">Total Dokter <?=$hitung1;?></p>
+                        </a>
                    </div>
                </div>
            <!--  <div class="card bg-warning">
@@ -95,9 +97,11 @@ $hitung3= mysqli_num_rows($get3); //Hitung jumlah kolom
         </div> -->
         <div class="card bg-success">
             <div class="card-body text-center">
-                <i class="fas fa-user-injured" style="font-size:40px;color:red"></i>
+                <i class="fas fa-user-injured" style="font-size:100px;color:red"></i>
                 <br>
+                <a class="nav-link" href="pasien.php">
                 <p class="card-text text-white">Total Pasien <?=$hitung3;?></p>
+            </a>
             </div>
         </div>
    <!--  <div class="card bg-danger">
@@ -107,9 +111,11 @@ $hitung3= mysqli_num_rows($get3); //Hitung jumlah kolom
 </div>   -->
 <div class="card bg-warning">
     <div class="card-body text-center">
-        <i class="fas fa-capsules" style="font-size:40px;color:whitesmoke;"></i>
+        <i class="fas fa-capsules" style="font-size:100px;color:whitesmoke;"></i>
         <br>
+        <a class="nav-link" href="obat.php">
         <p class="card-text text-white">Total Obat <?=$hitung2;?></p>
+    </a>
     </div>
 </div>
 <!-- <div class="card bg-info">
